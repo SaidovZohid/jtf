@@ -1,0 +1,18 @@
+[ ] Add the page in account to see when and how used file like a status. file status -> Sent, Downloaded, Expired, Deleted, Saved (user option to save file in server to use in future)
+[ ] Implement flash for error
+[ ] Write program available in three language default uzbek, english and russian
+
+[v] Write a README.md file.
+[v] Add delete url
+[v] fix the error in getting ip address of users
+[v] Add how to use application api and frontend
+[v] Making admin web page to see all users and sessions
+[v] Make session more powerfull get user ip address and location and device information into mongodb
+[v] Time in download page should be in users time or just remove showing the time when expires
+[v] Try to make ssh connection without port like this "ssh zohiddev.me < file". Try to make it like this!
+[v] In download page when user visit with unknown subdomain or own subdomain in download button showing $subdomain.zohiddev.me/direct/{{link}}. FIX THIS 
+[v] The Header in when user visit the site with own subdomain like this zohid.zohiddev.me in the header showing the login, signup, logout and signup in the url $subdomain.zohiddev.me. FIX THIS. It should not looks like this it should be zohiddev.me/~
+[v] Know why mongodb container is shutting down
+[v] Write the logic of checking user options
+[v] Transform from github.com/fatih/color to github.com/logrusorgru/aurora. The reason. fatih color is not working in production.
+[v] Add option command "sv" from 1 minute to 60 minute like "How long should the file be valid for downloading?"

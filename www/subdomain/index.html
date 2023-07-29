@@ -1,0 +1,79 @@
+{% extends "sample_main/base.html" %}
+{% block style %}
+<style>
+    body {
+        background-color: #fff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    }
+    .container {
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+    .right-desc {
+        position: relative;
+        cursor: pointer;
+    }
+    .right-desc:hover .right-text{
+        display: block;
+    }
+
+    .right-text {
+        padding: 15px;
+        width: 300px;
+        position: absolute;
+        backdrop-filter: blur(10px);
+        background-color: rgba(45, 195, 45, 0.266);
+        color: #212529;
+        display: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 15px;
+        top: 35px;
+        transition: 1s display;
+    }
+    
+</style>
+{% endblock %}
+
+{% block content %}
+{% if username %} 
+{% include "sample_main/auth_header.html"%} 
+{% else %} 
+{% include "sample_main/unauth_header.html"%} 
+{% endif %}
+
+<main class="container">
+    <div class="domain" style="margin-top: 50px;">
+        {% if owns %}
+            <h3 style="background-color: #212529; color: #fff; border-radius: 10px; text-align: center; padding: 10px; border-color: #212529; border-style: dashed;">Sssh-weet! 🗝️😄 It seems like you're testing your verified domain! You're the rightful owner of this secure corner of the web. Keep rocking those secure connections and let your authenticity shine! ✨🚀</h3>
+        {% else %}
+            <h3 style="background-color: #212529; color: #fff; border-radius: 10px; text-align: center; padding: 10px; border-color: #212529; border-style: dashed;">Oops! 😅🔒 It looks like this verified domain doesn't belong to you. Remember, verified domains are like digital fingerprints, unique to their owners.</h3>
+        {% endif %}
+        <h3 class="right-desc" style="color: #fff; text-align: center;   background-color: rgb(45, 195, 45); padding: 10px; display: flex; justify-content: center; align-items: center; border-radius: 20px; display: flex; justify-content: center; align-items: center; border-color: #212529; margin-left: 450px; margin-right: 450px;">VERIFIED <p class="right-text">Verified subdomains are specific subdomains within a domain that have undergone a verification process to confirm their authenticity and trustworthiness. They serve as a means to establish credibility and differentiate verified users or entities from others on the same domain. Verified subdomains often come with additional security measures and may display visual indicators, such as a verification badge or icon, to indicate their verified status. This verification process helps build trust among users, as it provides assurance that the information or content originating from the verified subdomain can be relied upon.</p></h3>
+        <div class="subdomain" style="width: 100%; text-align: center; display: flex; justify-content: center; align-items: center; margin-top: -30px;">
+            <p style="text-decoration: none; font-weight: bold; color: #364fc7;  font-size: 30px;">{{link}}</p>
+        </div>
+    </div>
+    {% if ln == 0 %}
+        <h2 style="text-align: center; margin-top: -20px;">Fingerprint</h2>    
+        {% if owns %}
+            <p style="font-weight: bold; color: #212529; border-color: #212529; border-style: dashed; border-radius: 10px; text-align: center; padding: 10px;">🔑 Oops! 🫢 It looks like the subdomain you're searching for doesn't have any SSH keys linked to it among the list of <span style="color: #364fc7;">VERIFIED</span> users. But don't fret! You still have the opportunity to link SSH keys to it. 😉 Take control of the subdomain and show the world your unique identity.</p>
+        {% else %}
+            <p style="font-weight: bold; color: #212529; text-align: center; padding: 10px;">🔑 Oops! 🫢 It looks like the subdomain you're searching for doesn't have any SSH keys linked to it among the list of <span style="color: #364fc7;">VERIFIED</span> users. But don't fret! You still have the opportunity to claim subdomain and link ssh keys to your subdomain. 😉 Take control of the subdomain and show the world your unique identity. <a href="{{link_site}}" style="text-decoration: none;">Click me</a> start the process!</p>
+        {% endif %}
+    {% elif ln == 1 %}
+        <h2 style="text-align: center; margin-top: -20px;">Fingerprint</h2>    
+        {% for key in keys %}
+            <p style="font-weight: bold; text-align: center; font-size: 18px;"><span style="color: #364fc7;">SSH256:</span>  {{key.SSHHash}}</p>
+        {% endfor %}
+    {% else %}
+        <h2 style="text-align: center;">Fingerprints</h2>
+        {% for key in keys %}
+            <p style="border-radius: 8px; padding: 20px; font-weight: bold; text-align: center; font-size: 18px;"><span style="color: #364fc7;">SSH256:</span>  {{key.SSHHash}}</p>
+        {% endfor %}
+    {% endif %}
+</main>
+
+{% endblock %}

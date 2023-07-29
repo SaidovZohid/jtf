@@ -1,0 +1,67 @@
+{% block style %}
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+  header a {
+    color: #212529;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  header button a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+  }
+  header button:nth-child(1) {
+    background-color: #364fc7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  header button:nth-child(2) {
+    background-color: transparent;
+    color: #212529;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .login a {
+    color: #364fc7;
+  }
+  .login a:hover {
+    color: #212529;
+  }
+  header button:nth-child(2):hover {
+    color: #212529;
+  }
+  header button:nth-child(1):hover {
+    background-color: #212529;
+  }
+</style>
+{% endblock %} {% block header %}
+<header class="container">
+  <a href="{{links.LinkOne}}">JTF</a>
+  <div>
+    <button>
+      <a href="{{links.LinkTwo}}">Sign up</a>
+    </button>
+    <button class="login">
+      <a href="{{links.LinkThree}}">Log in</a>
+    </button>
+  </div>
+</header>
+{% endblock %}

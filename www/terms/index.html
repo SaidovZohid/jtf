@@ -1,0 +1,243 @@
+{% extends "sample_main/base.html" %} {% block style %}
+<style>
+  body {
+    background-color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  main .term {
+    margin-top: 30px;
+  }
+  main .term h3 {
+    font-size: 30px;
+    text-align: center;
+  }
+  main .term h4 {
+    font-size: 20px;
+    text-align: center;
+  }
+  main .term p {
+    text-align: center;
+  }
+</style>
+{% endblock %} {% block content %}
+{% if username %} 
+{% include "sample_main/auth_header.html"%} 
+{% else %} 
+{% include "sample_main/unauth_header.html"%} 
+{% endif %}
+<main class="container">
+  <div class="term">
+    <h3>📜 Terms and conditions (English)</h3>
+    <p>
+      These terms of service ("Terms") govern your use of the JTF(Just Transfer File) file
+      transfer application ("JTF" or the "App"), owned and operated by
+      <a
+        target="_blank"
+        href="https://zohiddev.me"
+        style="text-decoration: none; color: #364fc7; font-weight: bold"
+        >zohiddev.me</a
+      >. By accessing or using JTF, you agree to be bound by these Terms.
+      Please read them carefully before using the App.
+    </p>
+  </div>
+  <div class="term">
+    <h4>1. Acceptance of Terms</h4>
+    <p>
+      By using JTF, you affirm that you are at least
+      <span style="color: #364fc7; font-weight: bold">18 years old</span>
+      and are fully able and competent to enter into the terms, conditions,
+      obligations, affirmations, representations, and warranties set forth in
+      these Terms. If you are accessing or using the App on behalf of a company,
+      organization, or other legal entity, you represent and warrant that you
+      have the authority to bind such entity to these Terms.
+    </p>
+  </div>
+  <div class="term">
+    <h4>2. Description of Service</h4>
+    <p>
+      JTF is a file transfer application that allows users to securely and
+      easily send files of various types and sizes to other individuals or
+      groups. The App facilitates the transfer of files by providing a platform
+      for uploading, storing, and sharing files.
+    </p>
+  </div>
+  <div class="term">
+    <h4>3. User Obligations</h4>
+    <div class="abc">
+      <p>
+        a.
+        <span style="font-weight: bold; color: #364fc7">Registration</span>: To
+        access certain features of JTF, you may be required to create a
+        user account. You agree to provide accurate, current, and complete
+        information during the registration process and to keep your account
+        information updated.
+      </p>
+      <p>
+        b.
+        <span style="font-weight: bold; color: #364fc7"
+          >Prohibited Activities</span
+        >: You shall not use JTF for any unlawful, unauthorized, or
+        inappropriate purposes. This includes, but is not limited to,
+        transmitting any material that is illegal, infringing, harmful,
+        defamatory, or obscene. You are solely responsible for your use of
+        JTF and for any content you upload, transmit, or share using the
+        App.
+      </p>
+      <p>
+        c. <span style="font-weight: bold; color: #364fc7">Security</span>: You
+        are responsible for maintaining the confidentiality of your account
+        credentials and for any activity that occurs under your account. You
+        agree to notify us immediately of any unauthorized use of your account
+        or any other breach of security.
+      </p>
+    </div>
+  </div>
+  <div class="term">
+    <h4>4. Intellectual Property</h4>
+    <p>
+      JTF and its original content, features, and functionality are owned
+      by
+      <a
+        target="_blank"
+        href="https://zohiddev.me"
+        style="text-decoration: none; color: #364fc7; font-weight: bold"
+        >👨‍💻 zohiddev.me</a
+      >
+      and are protected. You may not use, reproduce, distribute, modify, or
+      create derivative works of any part of JTF without our prior written
+      consent.
+    </p>
+  </div>
+  <div class="term">
+    <h4>5. Privacy</h4>
+    <p>
+      We are committed to protecting your privacy and handling your personal
+      information securely. Our Privacy Policy explains how we collect, use, and
+      disclose information when you use JTF. By using the App, you consent
+      to our collection and use of your information.
+    </p>
+  </div>
+  <div class="term">
+    <h4>6. Limitation of Liability</h4>
+    <p>
+      You acknowledge and agree that JTF is provided on an "as is" and "as
+      available" basis. We do not warrant that the App will be uninterrupted,
+      error-free, or secure. In no event shall we be liable for any direct,
+      indirect, incidental, consequential, or special damages arising out of or
+      in connection with your use of JTF.
+    </p>
+  </div>
+  <div class="term">
+    <h4>7. Termination</h4>
+    <p>
+      We reserve the right to suspend or terminate your access to JTF at
+      any time, without prior notice or liability, for any reason, including,
+      but not limited to, breach of these Terms.
+    </p>
+  </div>
+  <div class="term">
+    <h4>8. Modifications to Terms</h4>
+    <p>
+      We may revise these Terms at any time by updating this page. By continuing
+      to use JTF after any modifications, you agree to be bound by the
+      revised Terms.
+    </p>
+  </div>
+  <hr style="margin-bottom: 50px; margin-top: 50px;">
+  <div class="term">
+    <h3>📜 Foydalanuvchi kelishuvi (Uzbek)</h3>
+    <p>
+      Ushbu xizmat shartlari ("Shartlar"), JTF (Just Transfer File) fayl transferi dasturini ("JTF" yoki "Dastur")
+      <a
+        target="_blank"
+        href="https://zohiddev.me"
+        style="text-decoration: none; color: #364fc7; font-weight: bold"
+        >zohiddev.me</a
+      > tomonidan boshqariladi va egasidir. JTFga kirish yoki foydalanish orqali, ushbu Shartlar bilan bog'liqlikni qabul qilasiz. Dasturni foydalanishdan oldin ularni diqqat bilan o'qing!
+    </p>
+  </div>
+  <div class="term">
+    <h4>1. Shartlarni qabul qilish</h4>
+    <p>
+      JTF-dan foydalanib, siz kamida 18 yoshda
+      <span style="color: #364fc7; font-weight: bold">18 yoshda</span>
+      ekanligingizni va shartlar, shartlarga kirishga to'liq qodir va vakolatli ekanligingizni tasdiqlaysiz,
+      majburiyatlari, affirmations, vakolatxonalari, va kafolatlar belgilangan
+      bu shartlar. Agar siz kompaniya nomidan ilovaga kirayotgan yoki foydalanayotgan bo'lsangiz,
+      tashkilot yoki boshqa yuridik shaxs, siz vakillik qilasiz va kafolat berasiz
+      bunday shaxsni ushbu shartlarga bog'lash vakolatiga ega bo'ling.
+    </p>
+  </div>
+  <div class="term">
+    <h4>2. Xizmat tavsifi</h4>
+    <p>
+      JTF-bu foydalanuvchilarga xavfsiz va
+      har xil turdagi va o'lchamdagi fayllarni boshqa shaxslarga osongina yuboring yoki
+      guruhlar. Ilova platformani taqdim etish orqali fayllarni uzatishni osonlashtiradi
+      fayllarni yuklash, saqlash va almashish uchun.
+    </p>
+  </div>
+  <div class="term">
+    <h4>3. Foydalanuvchi Majburiyatlari</h4>
+    <div class="abc">
+      <p>
+        a.
+        <span style="font-weight: bold; color: #364fc7">Ro'yxatdan o'tish</span>: JTF-ning ba'zi xususiyatlariga kirish uchun sizdan foydalanuvchi hisobini yaratish talab qilinishi mumkin. Siz ro'yxatdan o'tish jarayonida aniq, dolzarb va to'liq ma'lumotlarni taqdim etishga va hisob qaydnomangiz ma'lumotlarini yangilab turishga rozilik bildirasiz.
+      </p>
+      <p>
+        b.
+        <span style="font-weight: bold; color: #364fc7"
+          >Taqiqlangan harakatlar</span
+        >: Siz uni noqonuniy, ruxsatsiz yoki noo'rin maqsadlarda ishlatmaysiz. Bunga noqonuniy, buzg'unchi, zararli, tuhmat qiluvchi yoki odobsiz har qanday materialni uzatish kiradi, lekin ular bilan cheklanmaydi. Siz JTF-dan foydalanishingiz va ilova yordamida yuklagan, uzatgan yoki baham ko'rgan har qanday tarkib uchun faqat siz javobgarsiz.
+      </p>
+      <p>
+        c. <span style="font-weight: bold; color: #364fc7">Xavfsizlik</span>: Siz hisob qaydnomangizning maxfiyligini saqlash va hisobingiz ostida sodir bo'ladigan har qanday faoliyat uchun javobgarsiz. Hisobingizdan ruxsatsiz foydalanish yoki boshqa xavfsizlik buzilishi haqida darhol bizga xabar berishga rozilik bildirasiz.
+      </p>
+    </div>
+  </div>
+  <div class="term">
+    <h4>4. Intellektual Mulk</h4>
+    <p>
+      JTF va uning asl mazmuni, xususiyatlari va funksionalligi quyidagilarga tegishli
+      <a
+        target="_blank"
+        href="https://zohiddev.me"
+        style="text-decoration: none; color: #364fc7; font-weight: bold"
+        >👨‍💻 zohiddev.me</a
+      >
+      va himoyalangan. Oldindan yozma roziligimizsiz JTF ning biron bir qismidan foydalanish, ko'paytirish, tarqatish, o'zgartirish yoki lotin asarlarini yaratishingiz mumkin emas.
+    </p>
+  </div>
+  <div class="term">
+    <h4>5. Maxfiylik</h4>
+    <p>
+      Biz sizning maxfiyligingizni himoya qilish va xavfsiz shaxsiy ma'lumotlarni saqlash majburiyatini olamiz. Maxfiylik siyosatimiz JTF-dan foydalanganda ma'lumotlarni qanday to'plashimiz, ishlatishimiz va oshkor qilishimizni tushuntiradi. Ilovadan foydalanib, biz zizning ma'lumotlaringizga to'plashimizga va ulardan foydalanishga rozilik bildirasiz.
+    </p>
+  </div>
+  <div class="term">
+    <h4>6. Javobgarlikni cheklash</h4>
+    <p>
+      Siz JTF "kabi" va "mavjud" asosida taqdim etilishini tan olasiz va rozilik bildirasiz. Biz ilova uzluksiz, xatosiz yoki xavfsiz bo'lishiga kafolat bermaymiz. Hech qanday holatda biz JTF dan foydalanganingiz yoki undan kelib chiqadigan to'g'ridan-to'g'ri, bilvosita, tasodifiy, oqibatli yoki maxsus zararlar uchun javobgar bo'lmaymiz.
+    </p>
+  </div>
+  <div class="term">
+    <h4>7. Tugatish</h4>
+    <p>
+      JTF-ga kirishni istalgan vaqtda, oldindan ogohlantirmasdan yoki javobgarliksiz, har qanday sababga ko'ra, shu jumladan, ushbu shartlarni buzish bilan cheklash yoki to'xtatish huquqini saqlab qolamiz.
+    </p>
+  </div>
+  <div class="term">
+    <h4>8. Shartlarga o'zgartirishlar</h4>
+    <p>
+      Ushbu sahifani yangilash orqali istalgan vaqtda ushbu shartlarni qayta ko'rib chiqishimiz mumkin. Har qanday o'zgartirishlardan so'ng JTF-dan foydalanishni davom ettirish orqali siz qayta ko'rib chiqilgan shartlar bilan bog'lanishga rozilik bildirasiz.
+    </p>
+  </div>
+</main>
+{% include "sample_main/footer.html"%}
+{% endblock %}

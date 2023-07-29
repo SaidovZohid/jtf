@@ -1,0 +1,97 @@
+{% block style %}
+<style>
+  body {
+    background-color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  main {
+    display: grid;
+    place-items: center;
+    position: relative;
+    top: 150px;
+  }
+  main h1 {
+    color: #212529;
+    font-size: 60px;
+  }
+  main h1 span {
+    color: #364fc7;
+  }
+  .git {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    background-color: #212529;
+    width: 500px;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  a {
+    text-decoration: none;
+  }
+  .git:hover {
+    background-color: #364fc7;
+  }
+  .git img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  .git p {
+    color: #fff;
+  }
+  .google {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    background-color: #364fc7;
+    width: 500px;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .google:hover {
+    background-color: #212529;
+  }
+  .google img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  .google p {
+    color: #fff;
+  }
+</style>
+{% endblock %} {% block content %}
+{% include "sample_main/unauth_header.html" %}
+<main>
+  <h1>Sign in to <span>JTF</span></h1>
+  <a href="/login/github">
+    <div class="git">
+      <img src="./../assets/github.svg" alt="logo" />
+      <p>Sign in with GitHub</p>
+    </div>
+  </a>
+  <!-- <a href="/login/google">
+    <div class="google">
+      <img src="./../assets/google.svg" alt="logo" />
+      <p>Sign in with Google 💻</p>
+    </div>
+  </a> -->
+</main>
+{% endblock %}

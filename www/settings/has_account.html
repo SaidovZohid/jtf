@@ -1,0 +1,56 @@
+{% block style %}
+<style>
+  main .right {
+    color: #212529;
+    border-left: 1px solid #212529;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+  }
+  main .right h3 {
+    color: #212529;
+    font-size: 35px;
+    margin: 0 !important;
+  }
+  .right-desc{
+    position: relative;
+    color: #364fc7;
+    cursor: pointer;
+  }
+ 
+  main .right a {
+    color: #364fc7;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    width: 0px;
+  }
+  main .right a:hover {
+    text-decoration: underline;
+  }
+  .right-text{
+    padding: 15px;
+    width: 300px;
+    min-height: 100px;
+    position: absolute;
+    display: none;
+    backdrop-filter: blur(10px);
+    background-color: rgba(128, 128, 128, 0.537);
+    color: #212529;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    top: 30px;
+  }
+  .right-desc:hover .right-text{
+    display: block;
+  }
+</style>
+{% endblock %} {% block has_account %}
+<div class="right">
+  <h3>Your personal <span class="right-desc">verified <p class="right-text">Verified subdomains are specific subdomains within a domain that have undergone a verification process to confirm their authenticity and trustworthiness. They serve as a means to establish credibility and differentiate verified users or entities from others on the same domain. Verified subdomains often come with additional security measures and may display visual indicators, such as a verification badge or icon, to indicate their verified status. This verification process helps build trust among users, as it provides assurance that the information or content originating from the verified subdomain can be relied upon.</p></span> link</h3>
+  <a href="{{link}}" target="_blank">{{ link }}</a>
+</div>
+{% endblock %}

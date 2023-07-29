@@ -1,0 +1,74 @@
+{% block style %}
+<style>
+  /* ********** SITE FOOTER STYLE START ******** */
+  .site-footer {
+    padding-top: 100px;
+  }
+
+  .site-footer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #e9ecef;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .site-footer-title {
+    color: #212529;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .site-footer-subtitle {
+    color: #364fc7;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+
+  .hero-fill {
+    color: #4263eb;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: 650px) {
+    .site-footer-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .site-footer-title {
+      margin-bottom: 15px;
+    }
+  }
+  /* ********** SITE FOOTER STYLE END ******** */
+</style>
+{% endblock %} {% block footer %}
+<!-- SITE FOOTER START -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer-wrapper">
+      <p class="site-footer-title">
+        © 2023 <a class="hero-fill" href="/">jtf</a> - All
+        rights reserved
+        <a class="hero-fill" href="mailto:support@zohiddev.me"
+          >support@zohiddev.me</a
+        >
+      </p>
+      <div class="footer-box">
+        <a href="{{base_url}}/how-to-use" class="site-footer-subtitle"
+          >How to use it?</a
+        >
+        <a class="site-footer-subtitle" href="{{base_url}}/terms">
+          Terms and Conditions
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- SITE FOOTER END -->
+{% endblock %}

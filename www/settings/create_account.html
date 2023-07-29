@@ -1,0 +1,138 @@
+{% block style %}
+<style>
+  main .right {
+    color: #212529;
+    border-left: 1px solid #212529;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+  }
+  main .right h3 {
+    color: #212529;
+    font-size: 35px;
+    margin: 0 !important;
+  }
+  main .right h3 span {
+    color: #364fc7;
+  }
+  main .right p {
+    color: #212529;
+    font-size: 20px;
+  }
+  main .right p span {
+    color: #364fc7;
+  }
+  main .right div p {
+    font-size: 16px;
+  }
+  main input,
+  textarea {
+    background-color: #dbe4ff;
+    outline: none;
+    border: 2px solid #ccc;
+    width: 100%;
+    padding: 13px 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border-style: dashed;
+    box-shadow: 3px 3px 3px #999;
+  }
+  main input::placeholder,
+  textarea::placeholder {
+    color: #212529;
+    font-family: monospace;
+  }
+  main div h6 {
+    font-size: 18px;
+    margin: 0 !important;
+  }
+  main .key {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbe4ff;
+    display: inline-block;
+    font-size: 16px;
+    font-family: monospace;
+  }
+  main button {
+    background-color: #364fc7;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #fff;
+    width: 180px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .right-desc span{
+    position: relative;
+    cursor: pointer;
+  }
+  .right-desc span:hover .right-text{
+    display: block;
+  }
+  .right-text {
+    padding: 15px;
+    width: 300px;
+    position: absolute;
+    backdrop-filter: blur(5px);
+    background-color: #364ec739;
+    color: #212529;
+    display: none;
+    border-radius: 15px;
+    cursor: pointer;
+    top: 35px;
+    left: 0px;
+    transition: 1s display;
+  }
+</style>
+{% endblock %} {% block create_account %}
+<div class="right">
+  <h3 class="right-desc">🙇‍♂️ Claim your personal <span>verified <p class="right-text" style="font-size: 15px;">Verified subdomains are specific subdomains within a domain that have undergone a verification process to confirm their authenticity and trustworthiness. They serve as a means to establish credibility and differentiate verified users or entities from others on the same domain. Verified subdomains often come with additional security measures and may display visual indicators, such as a verification badge or icon, to indicate their verified status. This verification process helps build trust among users, as it provides assurance that the information or content originating from the verified subdomain can be relied upon.</p></span> subdomain</h3>
+  <p>
+    Let everyone know it's you by claiming your personal verified JTF
+    subdomain. A personal subdomain looks like
+    <span style="font-weight: bold">yourdomain.sendit.sh</span> that is linked
+    with your public SSH key, and is publicly verifiable on the web by everyone.
+    This means that people receiving your link, to download from, are 100%
+    guaranteed the files are coming from you.
+  </p>
+  {% if error %}
+    <code class="error" style="padding: 20px;
+    border-style: dashed;
+    border-radius: 8px; color: #fff; background-color: #212529; display: flex;  font-size: 15px;">😩 {{ error }}</code>
+    {% endif%}
+  <form action="/s/settings/create/account" method="POST">
+    <div>
+      <p>Subdomain</p>
+      <input
+        name="subdomain"
+        type="text"
+        placeholder="subdomain"
+        required
+        value="{{subdomain}}"
+      />
+    </div>
+    <div>
+      <p>SSH key</p>
+      <textarea
+        name="sshKey"
+        cols="30"
+        rows="10"
+        placeholder="give me a ssh-rsa public key"
+        required
+      >{{key}}</textarea>
+    </div>
+    <div style="margin-top: 30px">
+      <h6>Already have a key?</h6>
+      <p>Copy your key to your clipboard</p>
+      <code class="key">cat ~/.ssh/id_rsa.pub | pbcopy</code>
+    </div>
+    <button type="submit">Claim my subdomain</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% block style %}
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  header span a {
+    color: #212529;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  header div {
+    display: flex;
+    gap: 20px;
+  }
+  header a {
+    text-decoration: none;
+    color: #364fc7;
+    font-weight: 700;
+    transition: 0.5s;
+  }
+  header a:hover {
+    color: #212529;
+  }
+</style>
+{% endblock %} {% block header %}
+<header class="container">
+  <span>
+    <a href="{{links.LinkOne}}">JTF</a>
+  </span>
+  <div>
+    <a href="{{links.LinkTwo}}">{{username}}</a>
+    <a href="{{links.LinkThree}}">Log out</a>
+  </div>
+</header>
+{% endblock %}
